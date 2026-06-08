@@ -1,0 +1,286 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --card-hover: #273449;
+  --text: #cbd5f5;
+  --heading: #ffffff;
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --border: #334155;
+}
+
+/* ================= BASE ================= */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(to bottom right, #0f172a, #020617);
+  color: var(--text);
+}
+
+#root {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  background: var(--primary);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #020617;
+  color: white;
+  width: 200px;
+}
+
+.search-btn {
+  background: var(--primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.about-btn,
+.nav-login-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.about-btn {
+  background: #334155;
+  color: white;
+}
+
+.about-btn:hover {
+  background: #475569;
+  transform: scale(1.05);
+}
+
+.nav-login-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.nav-login-btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  text-align: center;
+  margin: 60px 0;
+}
+
+/* 🔥 FINAL GLOW + GRADIENT ANIMATED HEADING */
+.hero h1 {
+  font-size: 44px;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #3b82f6,
+    #60a5fa,
+    #a78bfa,
+    #22c55e,
+    #3b82f6
+  );
+
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 4s ease infinite, floatText 3s ease-in-out infinite;
+
+  position: relative;
+
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.7))
+          drop-shadow(0 0 25px rgba(147, 197, 253, 0.4));
+}
+
+.hero h1::before,
+.hero h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(25px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.hero h1::after {
+  filter: blur(50px);
+  opacity: 0.25;
+}
+
+/* animations */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero p {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* ================= GRID ================= */
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.parking-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.parking-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: var(--card-hover);
+}
+
+/* ================= ICON ================= */
+
+.parking-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 36px;
+
+  margin: 0 auto 18px auto;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.25),
+    rgba(59, 130, 246, 0.08)
+  );
+
+  border: 1px solid rgba(59, 130, 246, 0.3);
+
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.parking-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* ================= TEXT ================= */
+
+.parking-card h2 {
+  color: var(--heading);
+}
+
+.slots {
+  color: #94a3b8;
+}
+
+/* ================= FEE BOX ================= */
+
+.fee-box {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.primary-btn {
+  background: var(--primary);
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}

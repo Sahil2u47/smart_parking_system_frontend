@@ -1,0 +1,141 @@
+.signup-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #0f172a, #020617);
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow background */
+.signup-page::before,
+.signup-page::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.signup-page::before {
+  background: #3b82f6;
+  top: -100px;
+  left: -100px;
+}
+
+.signup-page::after {
+  background: #a78bfa;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* ================= CARD ================= */
+
+.signup-box {
+  position: relative;
+  z-index: 1;
+
+  width: 350px;
+  padding: 30px;
+
+  border-radius: 18px;
+
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;   /* 🔥 spacing fix */
+}
+
+/* title */
+.signup-box h1 {
+  text-align: center;
+  font-size: 28px;
+
+  background: linear-gradient(90deg, #3b82f6, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* subtitle */
+.signup-box p {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ================= FORM FIX ================= */
+
+.signup-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= INPUTS ================= */
+
+.signup-box input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.signup-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* ================= BUTTON ================= */
+
+.signup-box button {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  border: none;
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-box button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ================= MESSAGES ================= */
+
+.signup-box .error {
+  color: #ef4444;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signup-box .success {
+  color: #22c55e;
+  font-size: 13px;
+  text-align: center;
+}
