@@ -1,0 +1,153 @@
+.about-page {
+  min-height: calc(100vh - 76px);
+  padding: 90px 7%;
+}
+
+/* !  Hero     */
+
+.about-hero {
+  max-width: 850px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.about-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.about-hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+  color: var(--text-primary);
+}
+
+.about-hero h1 span {
+  display: block;
+  color: var(--primary);
+}
+
+.about-hero p {
+  max-width: 650px;
+  margin: 28px auto 0;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* !  Content Cards    */
+
+.about-content {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.about-card {
+  position: relative;
+  padding: 34px;
+  min-height: 240px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -50px;
+  top: -50px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.08;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: var(--shadow);
+}
+
+.about-card span {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-card h2 {
+  margin: 28px 0 14px;
+  color: var(--text-primary);
+  font-size: 23px;
+}
+
+.about-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* !  Tablet   */
+
+@media (max-width: 900px) {
+  .about-page {
+    padding: 70px 5%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .about-card {
+    min-height: auto;
+  }
+}
+
+/* !  Mobile  */
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 55px 20px;
+  }
+
+  .about-hero {
+    margin-bottom: 55px;
+  }
+
+  .about-hero h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .about-hero p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-card {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .about-card h2 {
+    margin-top: 22px;
+  }
+}

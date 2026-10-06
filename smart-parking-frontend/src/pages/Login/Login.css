@@ -1,0 +1,508 @@
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   BACKGROUND OVERLAY
+========================================= */
+
+.login-page .auth-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 8, 16, 0.24),
+      rgba(0, 8, 16, 0.05),
+      rgba(0, 8, 16, 0.25)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 8, 15, 0.34),
+      transparent 34%,
+      rgba(0, 8, 15, 0.82) 100%
+    );
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.login-page .auth-topbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 5;
+
+  height: 72px;
+
+  padding: 0 4.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.login-page .auth-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.login-page .auth-brand-logo {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #0edab5;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 25px rgba(14, 218, 181, 0.25);
+}
+
+.login-page .auth-brand div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.login-page .auth-brand strong {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.login-page .auth-brand span {
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 8px;
+}
+
+.login-page .auth-top-link {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+}
+
+.login-page .auth-top-link a {
+  color: #0edab5;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.login-page .auth-top-link a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   CENTER
+========================================= */
+
+.login-page .auth-center {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 65px 20px 45px;
+}
+
+/* =========================================
+   GLASS LOGIN FORM
+========================================= */
+
+.login-page .auth-card {
+  position: relative;
+
+  width: 430px;
+  max-width: 100%;
+
+  padding: 30px 33px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(170, 235, 255, 0.30);
+
+  border-radius: 22px;
+
+  /* VERY TRANSPARENT */
+  background: rgba(8, 35, 45, 0.20);
+
+  backdrop-filter: blur(10px) saturate(135%);
+  -webkit-backdrop-filter: blur(10px) saturate(135%);
+
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.40),
+    0 8px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.20),
+    inset 0 -1px 1px rgba(0, 255, 220, 0.08);
+}
+
+/* glass highlight */
+
+.login-page .auth-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+  right: 15%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.login-page .auth-card-header {
+  margin-bottom: 22px;
+}
+
+.login-page .auth-label {
+  color: #0edab5;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.login-page .auth-card-header h1 {
+  margin: 8px 0 9px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  line-height: 1.10;
+
+  letter-spacing: -0.8px;
+}
+
+.login-page .auth-card-header h1 strong {
+  color: #0edab5;
+}
+
+.login-page .auth-card-header p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.67);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.login-page .auth-field {
+  margin-bottom: 16px;
+}
+
+.login-page .auth-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.login-page .auth-field input {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(160, 235, 255, 0.23);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  /* transparent input */
+  background: rgba(0, 20, 30, 0.20);
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  transition: 0.2s ease;
+}
+
+.login-page .auth-field input::placeholder {
+  color: rgba(205, 230, 240, 0.55);
+}
+
+.login-page .auth-field input:hover {
+  border-color: rgba(160, 235, 255, 0.38);
+}
+
+.login-page .auth-field input:focus {
+  border-color: #0edab5;
+
+  background: rgba(0, 30, 38, 0.28);
+
+  box-shadow:
+    0 0 0 3px rgba(14, 218, 181, 0.10),
+    0 0 18px rgba(14, 218, 181, 0.08);
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.login-page .auth-card button {
+  width: 100%;
+
+  height: 46px;
+
+  margin-top: 3px;
+
+  border-radius: 10px;
+}
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.login-page .auth-bottom-text {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 20px;
+
+  font-size: 11px;
+}
+
+.login-page .auth-bottom-text span {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.login-page .auth-bottom-text a {
+  color: #0edab5;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.login-page .auth-bottom-text a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   BOTTOM GRADIENT
+========================================= */
+
+.login-page .auth-bottom-gradient {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  height: 125px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 8, 14, 0.18) 28%,
+      rgba(0, 8, 14, 0.68) 68%,
+      rgba(0, 8, 14, 0.95) 100%
+    );
+}
+
+/* =========================================
+   SHORT SCREEN / LAPTOP
+========================================= */
+
+@media (max-height: 750px) and (min-width: 801px) {
+
+  .login-page .auth-topbar {
+    height: 62px;
+  }
+
+  .login-page .auth-brand-logo {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .login-page .auth-brand strong {
+    font-size: 14px;
+  }
+
+  .login-page .auth-center {
+    padding-top: 55px;
+    padding-bottom: 35px;
+  }
+
+  .login-page .auth-card {
+    width: 415px;
+
+    padding: 24px 29px;
+  }
+
+  .login-page .auth-card-header {
+    margin-bottom: 17px;
+  }
+
+  .login-page .auth-card-header h1 {
+    font-size: 25px;
+  }
+
+  .login-page .auth-field {
+    margin-bottom: 12px;
+  }
+
+  .login-page .auth-field input {
+    height: 42px;
+  }
+
+  .login-page .auth-card button {
+    height: 42px;
+  }
+
+  .login-page .auth-bottom-text {
+    margin-top: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    height: 100svh;
+    min-height: 100svh;
+
+    overflow-y: auto;
+  }
+
+  .login-page .auth-topbar {
+    height: 64px;
+
+    padding: 0 18px;
+  }
+
+  .login-page .auth-top-link span {
+    display: none;
+  }
+
+  .login-page .auth-center {
+    min-height: 100svh;
+
+    height: auto;
+
+    padding: 80px 16px 60px;
+  }
+
+  .login-page .auth-card {
+    width: 100%;
+
+    padding: 26px 21px;
+
+    border-radius: 19px;
+  }
+
+  .login-page .auth-card-header h1 {
+    font-size: 25px;
+  }
+
+  .login-page .auth-field input {
+    height: 44px;
+  }
+
+  .login-page .auth-card button {
+    height: 44px;
+  }
+}

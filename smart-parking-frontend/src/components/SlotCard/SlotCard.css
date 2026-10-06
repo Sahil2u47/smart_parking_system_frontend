@@ -1,0 +1,193 @@
+/* ================================
+   SLOT CARD
+================================ */
+
+.slot-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.005)),
+    var(--surface-solid);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* corner glow */
+.slot-card::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* ---------- Available ---------- */
+
+.slot-card.available {
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.slot-card.available::after {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2), transparent 70%);
+}
+
+.slot-card.available:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 197, 94, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 16px 36px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(34, 197, 94, 0.15);
+}
+
+/* ---------- Occupied ---------- */
+
+.slot-card.occupied {
+  border-color: rgba(239, 68, 68, 0.2);
+  background:
+    linear-gradient(180deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.01)),
+    var(--surface-solid);
+}
+
+.slot-card.occupied::after {
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.16), transparent 70%);
+}
+
+.slot-card.occupied .slot-card-icon {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+
+/* ---------- Top row ---------- */
+
+.slot-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.slot-card-top span {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.slot-card-top strong {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+/* ---------- Icon ---------- */
+
+.slot-card-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 34px;
+  transition: transform 0.3s ease;
+}
+
+.slot-card.available:hover .slot-card-icon {
+  transform: scale(1.1);
+}
+
+/* ---------- Status ---------- */
+
+.slot-card-status {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.slot-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.slot-card.available .slot-card-status {
+  color: #86efac;
+}
+
+.slot-card.occupied .slot-card-status {
+  color: #fca5a5;
+}
+
+.slot-card.available .slot-status-dot {
+  background: var(--success);
+  box-shadow: 0 0 10px var(--success);
+  animation: slot-pulse 1.8s ease-in-out infinite;
+}
+
+.slot-card.occupied .slot-status-dot {
+  background: var(--danger);
+  box-shadow: 0 0 10px var(--danger);
+}
+
+@keyframes slot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slot-card.available .slot-status-dot {
+    animation: none;
+  }
+
+  .slot-card,
+  .slot-card-icon {
+    transition: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .slot-card {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .slot-card-top strong {
+    font-size: 20px;
+  }
+
+  .slot-card-icon {
+    height: 54px;
+    font-size: 28px;
+  }
+}

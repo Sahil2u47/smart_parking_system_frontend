@@ -1,0 +1,145 @@
+/* ================================
+   BUTTON
+================================ */
+
+.common-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* shine sweep */
+.common-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.common-btn:hover::after {
+  left: 140%;
+}
+
+.common-btn:hover {
+  transform: translateY(-2px);
+}
+
+.common-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.common-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35);
+}
+
+.common-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.common-btn:disabled::after {
+  display: none;
+}
+
+/* ---------- Primary ---------- */
+
+.common-btn.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 55%, #22d3ee 140%);
+  color: #ffffff;
+  box-shadow:
+    0 10px 26px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.common-btn.primary:hover:not(:disabled) {
+  box-shadow:
+    0 14px 34px rgba(37, 99, 235, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Secondary ---------- */
+
+.common-btn.secondary {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.common-btn.secondary:hover:not(:disabled) {
+  border-color: var(--border-hover);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* ---------- Danger ---------- */
+
+.common-btn.danger {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #ffffff;
+  box-shadow:
+    0 10px 26px rgba(220, 38, 38, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.common-btn.danger:hover:not(:disabled) {
+  box-shadow:
+    0 14px 34px rgba(220, 38, 38, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* ---------- Full width ---------- */
+
+.common-btn.full-width {
+  width: 100%;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .common-btn,
+  .common-btn::after {
+    transition: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 480px) {
+  .common-btn {
+    width: 100%;
+    min-height: 46px;
+  }
+}

@@ -1,0 +1,553 @@
+/* =========================================
+   SIGNUP PAGE
+========================================= */
+
+.signup-page {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   BACKGROUND OVERLAY
+========================================= */
+
+.signup-page .auth-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 8, 16, 0.24),
+      rgba(0, 8, 16, 0.05),
+      rgba(0, 8, 16, 0.25)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 8, 15, 0.34),
+      transparent 32%,
+      rgba(0, 8, 15, 0.84) 100%
+    );
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.signup-page .auth-topbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 5;
+
+  height: 72px;
+
+  padding: 0 4.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.signup-page .auth-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.signup-page .auth-brand-logo {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #0edab5;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 25px rgba(14, 218, 181, 0.25);
+}
+
+.signup-page .auth-brand div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.signup-page .auth-brand strong {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.signup-page .auth-brand span {
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 8px;
+}
+
+.signup-page .auth-top-link {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+}
+
+.signup-page .auth-top-link a {
+  color: #0edab5;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.signup-page .auth-top-link a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   CENTER
+========================================= */
+
+.signup-page .auth-center {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 65px 20px 45px;
+}
+
+/* =========================================
+   GLASS SIGNUP CARD
+========================================= */
+
+.signup-page .signup-card {
+  position: relative;
+
+  width: 470px;
+  max-width: 100%;
+
+  padding: 27px 32px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(170, 235, 255, 0.30);
+
+  border-radius: 22px;
+
+  /* transparent glass */
+  background: rgba(8, 35, 45, 0.20);
+
+  backdrop-filter: blur(10px) saturate(135%);
+  -webkit-backdrop-filter: blur(10px) saturate(135%);
+
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.40),
+    0 8px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.20),
+    inset 0 -1px 1px rgba(0, 255, 220, 0.08);
+}
+
+/* glass highlight */
+
+.signup-page .signup-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+  right: 15%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.signup-page .auth-card-header {
+  margin-bottom: 18px;
+}
+
+.signup-page .auth-label {
+  color: #0edab5;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.signup-page .auth-card-header h1 {
+  margin: 7px 0 7px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.7px;
+}
+
+.signup-page .auth-card-header h1 strong {
+  color: #0edab5;
+}
+
+.signup-page .auth-card-header p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.64);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.signup-page .auth-field {
+  margin-bottom: 11px;
+}
+
+.signup-page .auth-field label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.signup-page .auth-field input {
+  width: 100%;
+
+  height: 41px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(160, 235, 255, 0.23);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  /* transparent input */
+  background: rgba(0, 20, 30, 0.20);
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  transition: 0.2s ease;
+}
+
+.signup-page .auth-field input::placeholder {
+  color: rgba(205, 230, 240, 0.52);
+}
+
+.signup-page .auth-field input:hover {
+  border-color: rgba(160, 235, 255, 0.38);
+}
+
+.signup-page .auth-field input:focus {
+  border-color: #0edab5;
+
+  background: rgba(0, 30, 38, 0.28);
+
+  box-shadow:
+    0 0 0 3px rgba(14, 218, 181, 0.10),
+    0 0 18px rgba(14, 218, 181, 0.08);
+}
+
+/* =========================================
+   PASSWORD ROW
+========================================= */
+
+.signup-page .signup-password-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.signup-page .signup-card button {
+  width: 100%;
+
+  height: 43px;
+
+  margin-top: 3px;
+
+  border-radius: 9px;
+}
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.signup-page .auth-bottom-text {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 16px;
+
+  font-size: 10px;
+}
+
+.signup-page .auth-bottom-text span {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.signup-page .auth-bottom-text a {
+  color: #0edab5;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.signup-page .auth-bottom-text a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   BOTTOM GRADIENT
+========================================= */
+
+.signup-page .auth-bottom-gradient {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  height: 120px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 8, 14, 0.18) 28%,
+      rgba(0, 8, 14, 0.68) 68%,
+      rgba(0, 8, 14, 0.95) 100%
+    );
+}
+
+/* =========================================
+   SHORT LAPTOP SCREEN
+========================================= */
+
+@media (max-height: 760px) and (min-width: 801px) {
+
+  .signup-page .auth-topbar {
+    height: 62px;
+  }
+
+  .signup-page .auth-brand-logo {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .signup-page .auth-brand strong {
+    font-size: 14px;
+  }
+
+  .signup-page .auth-center {
+    padding-top: 55px;
+    padding-bottom: 35px;
+  }
+
+  .signup-page .signup-card {
+    width: 455px;
+
+    padding: 21px 28px;
+  }
+
+  .signup-page .auth-card-header {
+    margin-bottom: 13px;
+  }
+
+  .signup-page .auth-card-header h1 {
+    font-size: 24px;
+  }
+
+  .signup-page .auth-field {
+    margin-bottom: 8px;
+  }
+
+  .signup-page .auth-field label {
+    margin-bottom: 4px;
+  }
+
+  .signup-page .auth-field input {
+    height: 37px;
+  }
+
+  .signup-page .signup-card button {
+    height: 39px;
+  }
+
+  .signup-page .auth-bottom-text {
+    margin-top: 12px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+  .signup-page {
+    height: 100vh;
+
+    overflow-y: auto;
+  }
+
+  .signup-page .auth-topbar {
+    height: 65px;
+
+    padding: 0 18px;
+  }
+
+  .signup-page .auth-center {
+    min-height: 100vh;
+
+    height: auto;
+
+    padding: 85px 18px 70px;
+  }
+
+  .signup-page .signup-card {
+    width: 100%;
+
+    max-width: 470px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .signup-page .auth-top-link span {
+    display: none;
+  }
+
+  .signup-page .auth-brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .signup-page .auth-brand strong {
+    font-size: 14px;
+  }
+
+  .signup-page .auth-brand span {
+    font-size: 7px;
+  }
+
+  .signup-page .signup-card {
+    padding: 24px 20px;
+
+    border-radius: 19px;
+  }
+
+  .signup-page .auth-card-header h1 {
+    font-size: 24px;
+  }
+
+  .signup-page .signup-password-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .signup-page .auth-field input {
+    height: 43px;
+  }
+
+  .signup-page .signup-card button {
+    height: 44px;
+  }
+}
