@@ -682,16 +682,11 @@ flowchart LR
 
 ## 🚀 Future Enhancements
 
-- [x] 🔐 JWT authentication & RBAC
-- [x] 🅿️ Automatic slot allocation with locking
-- [x] 💰 Dynamic surge pricing
-- [x] 📊 Admin analytics
 - [ ] 💳 Online payment integration
 - [ ] 📧 Email / SMS notifications
 - [ ] 🔔 Real-time booking notifications
 - [ ] 📍 GPS-based parking discovery
 - [ ] 📱 Mobile application
-- [ ] ☁️ Cloud deployment
 
 ---
 
