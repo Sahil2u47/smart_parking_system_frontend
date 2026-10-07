@@ -120,37 +120,6 @@ function UserDashboard() {
     }
   };
 
-  const handleCancel = async () => {
-    if (!activeBooking) {
-      return;
-    }
-
-    const confirmed = window.confirm(
-      `Cancel booking for ${activeBooking.vehicleNumber}?`
-    );
-
-    if (!confirmed) {
-      return;
-    }
-
-    try {
-      setActionLoading(true);
-
-      await bookingService.cancelBooking(
-        activeBooking.vehicleNumber
-      );
-
-      alert("Booking cancelled successfully.");
-
-      await loadDashboardData();
-    } catch (error) {
-      console.error("Cancel booking failed:", error);
-      alert(error.message);
-    } finally {
-      setActionLoading(false);
-    }
-  };
-
   return (
     <main className="dashboard-page">
       <section className="dashboard-header">
@@ -308,17 +277,6 @@ function UserDashboard() {
                       {actionLoading
                         ? "Processing..."
                         : "Exit Parking"}
-                    </button>
-
-                    <button
-                      type="button"
-                      className="dashboard-cancel-btn"
-                      onClick={handleCancel}
-                      disabled={actionLoading}
-                    >
-                      {actionLoading
-                        ? "Please wait..."
-                        : "Cancel Booking"}
                     </button>
                   </div>
                 </>
