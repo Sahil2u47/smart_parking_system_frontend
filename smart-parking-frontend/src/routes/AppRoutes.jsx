@@ -42,6 +42,7 @@ function AppRoutes() {
         }
       />
 
+
       {/* AUTH PAGES
           No PublicLayout here.
           These pages have their own full-screen design.

@@ -64,6 +64,7 @@ function Navbar() {
           >
             About
           </Link>
+
         </nav>
 
         <div className="navbar-actions">
@@ -168,6 +169,7 @@ function Navbar() {
           >
             About
           </Link>
+
 
           {isAuthenticated ? (
             <>
